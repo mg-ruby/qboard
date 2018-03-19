@@ -1,0 +1,6 @@
+<%= form_tag(questions_path, method: :get) do |f| %>
+  <ul class="menu">
+      <li><%= text_field_tag :q, params[:q] %></li>
+      <li><button type='submit' class="button">Search</button></li>
+  </ul>
+<% end %>

@@ -1,0 +1,9 @@
+<h2>New Project</h2>
+
+<%= simple_form_for @question, html: { novalidate: 'novalidate' } do |f| %>
+  <%= render "shared/error_messages", errors: @errors %>
+
+  <%= f.input :title %>
+  <%= f.input :body, input_html: { class: 'textarea' } %>
+  <%= f.button :submit %>
+<% end %>

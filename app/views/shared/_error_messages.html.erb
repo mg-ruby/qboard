@@ -1,0 +1,15 @@
+<% if errors.present? %>
+
+<div class="callout alert">
+    <p><%= pluralize(errors.count, "error") %> prohibited this todo from being saved:</p>
+
+    
+      <% errors.map do |key, messages| %>
+        <% messages.each do |error| %>
+          <p> - <%= key.to_s.capitalize %> <%= error %></p>
+        <% end %>
+      <% end %>
+    
+  </div>
+
+<% end %>

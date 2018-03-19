@@ -1,0 +1,9 @@
+<div class="blog-post">
+  <h3><%= link_to question.title, question %> <small><%= question.created_at.strftime('%d/%m/%Y')  %></small></h3>
+  <p><%= markdown(question.body) %></p>
+  <div class="callout">
+     <ul class="menu simple">
+        <li><a href="#">Answers: <%= question.answers.count %></a></li>
+     </ul>
+  </div>
+</div>

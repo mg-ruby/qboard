@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "QA" %></title>
+
+    <%= stylesheet_link_tag    "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "vendor/modernizr", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>  
+    <%= render 'shared/header' %>
+    <div class="callout large">
+       <div class="row column text-center">
+       <h1>QA Board</h1>
+       <p class="lead">Questions/Answers</p>
+      <a href="<%= new_question_path %>" class="button large">Add question</a>
+     </div>
+    </div>
+    <div class="row" id="content">
+      <div class="medium-8 columns">
+        <%= display_flash_messages %>
+        <%= yield %>
+      </div>
+      <div class="medium-3 columns sticky-container" data-sticky-container="" style="height: 318px;">
+         <div class="sticky" data-sticky="bwvebj-sticky" data-anchor="content" style="max-width: 285px;" data-events="resize">
+            <h4>Last searches</h4>
+            <ul>
+               <li><a href="#">Skyler</a></li>
+               <li><a href="#">Jesse</a></li>
+               <li><a href="#">Mike</a></li>
+               <li><a href="#">Holly</a></li>
+            </ul>
+         </div>
+      </div>
+    </div>
+  </body>
+</html>

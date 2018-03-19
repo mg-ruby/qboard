@@ -1,0 +1,17 @@
+<div class="top-bar">
+  <div class="row">
+     <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu="" role="menubar" data-dropdownmenu="3wqtyk-dropdownmenu">
+          <li class="menu-text" role="menuitem" tabindex="0">QA</li>
+          <% if current_user %>
+            <li><%= link_to "Sign out: #{current_user.name}", signout_path, id: "sign_out" %></li>
+          <% else %>
+            <li><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %></li>
+          <% end %>
+        </ul>
+     </div>
+     <div class="top-bar-right">
+        <%= render 'shared/search_form' %>
+     </div>
+  </div>
+</div>
