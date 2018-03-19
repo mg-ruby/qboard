@@ -9,7 +9,6 @@ class UserRepository < ROM::Repository::Root
 
   def from_omniauth(auth_params)
     data = auth_params.info
-    puts data
     user = users.where(email: data['email']).first
 
     unless user

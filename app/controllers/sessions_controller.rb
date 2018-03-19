@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
     user = repo.from_omniauth(request.env["omniauth.auth"])
-    session[:user_id] = user.id
+    user.is_a?(ROM::Struct::User) ? session[:user_id] = user.id : session[:user_id] = user.value.id
     redirect_to root_path
   end
 

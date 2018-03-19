@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
 
   def create
     transaction = CreateQuestion.new
-    transaction.(question_params) do |result|
+    transaction.(question_params.merge!({ user_id: @current_user.id })) do |result|
       result.success do |question|
         flash[:notice] = "Question has been created."
         redirect_to questions_path
