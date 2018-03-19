@@ -1,6 +1,6 @@
 class QuestionsController < ApplicationController
   def index
-    @questions = repo.query(params[:q])
+    @questions = repo.query(params[:q], current_user)
   end
 
   def show
@@ -33,6 +33,7 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :body, :q).to_h.symbolize_keys
   end
+
 
   def repo
     QuestionRepository.new(ROM.env)

@@ -15,8 +15,13 @@ class QuestionRepository < ROM::Repository::Root
     questions.by_pk(id).one!
   end
 
-  def query(q)
-    q ? questions.where { body.ilike("%#{q}%") }.order { created_at.desc } : sorted
+  def query(search_query, user = nil)
+    if search_query.present?
+      SearchResults::SearchCache.add(user, search_query)
+      questions.where { body.ilike("%#{search_query}%") }.order { created_at.desc }
+    else
+      sorted
+    end
   end
 
   def by_id_with_tickets(id)

@@ -22,20 +22,19 @@
      </div>
     </div>
     <div class="row" id="content">
-      <div class="medium-8 columns">
+      <div class="medium-9 columns">
         <%= display_flash_messages %>
         <%= yield %>
       </div>
-      <div class="medium-3 columns sticky-container" data-sticky-container="" style="height: 318px;">
-         <div class="sticky" data-sticky="bwvebj-sticky" data-anchor="content" style="max-width: 285px;" data-events="resize">
-            <h4>Last searches</h4>
-            <ul>
-               <li><a href="#">Skyler</a></li>
-               <li><a href="#">Jesse</a></li>
-               <li><a href="#">Mike</a></li>
-               <li><a href="#">Holly</a></li>
-            </ul>
-         </div>
+      <div class="medium-3 columns">
+        <h4>Last searches</h4>
+        <ul class='menu vertical'>
+          <% if @searches %>
+            <% @searches.each do |result| %>
+              <li><span class="secondary label full_width"><a href="<%= questions_path(q: result) %>"><%= result %></a></span></li>
+            <% end %>
+          <% end %>
+        </ul>
       </div>
     </div>
   </body>

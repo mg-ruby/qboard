@@ -49,6 +49,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'rack-mini-profiler'
+  gem 'bullet'  
 end
 
 group :test do
@@ -64,18 +66,15 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rom-rails'
 gem 'rom-sql'
-gem "dry-validation", "~> 0.11.1"
+gem 'dry-validation', '~> 0.11.1'
 gem 'dry-transaction', '~> 0.10.2'
-
 gem 'omniauth-google-oauth2'
-
 gem 'kaminari'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'simplemde-rails'
-gem 'bullet'
 gem 'rubocop', require: false
 gem 'rdoc'
 gem 'redis'
@@ -83,3 +82,5 @@ gem 'redcarpet'
 gem 'will_paginate'
 gem 'will_paginate-foundation'
 gem 'foundation_rails_helper', '~> 3.0'
+gem 'redis'
+gem 'redis-namespace'

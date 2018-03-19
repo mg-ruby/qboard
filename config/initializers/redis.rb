@@ -1,0 +1,1 @@
+$redis = Redis::Namespace.new("qaboard", redis: Redis.new)

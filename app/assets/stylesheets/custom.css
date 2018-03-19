@@ -1,0 +1,14 @@
+.secondary a {
+  color: #fff;
+}
+
+.full_width {
+  width: 100%;
+  margin-left: auto;
+  text-transform: uppercase;
+  margin-right: auto;
+  text-align: center;
+  max-width: inherit;
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
