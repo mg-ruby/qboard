@@ -1,6 +1,8 @@
 <div class="blog-post">
   <h3><%= @question.title %> <small><%= @question.created_at.strftime('%d/%m/%Y') %></small></h3>
-  <a href="<%= new_question_answer_path(@question) %>" class="button secondary">Add answer</a>
+  <% if current_user %>
+    <a href="<%= new_question_answer_path(@question) %>" class="button secondary">Add answer</a>
+  <% end %>
   <p><%= markdown(@question.body) %></p>
   <div class="callout">
      <ul class="menu simple">

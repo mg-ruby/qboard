@@ -1,5 +1,5 @@
 <h2>Add answer</h2>
-<h5><b>Question was:</b> <%= @question.title %></h5>
+<h5><b>For question:</b> <%= @question.title %></h5>
 <%= simple_form_for [@question, @answer], html: { novalidate: 'novalidate' } do |f| %>
   <%= render "shared/error_messages", errors: @errors %>
 

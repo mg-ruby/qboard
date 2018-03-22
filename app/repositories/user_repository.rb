@@ -4,7 +4,7 @@ class UserRepository < ROM::Repository::Root
   commands :create, update: :by_pk, delete: :by_pk, mapper: :user
 
   def by_id(id)
-    users.by_pk(id).one!
+    users.by_pk(id).one
   end
 
   def from_omniauth(auth_params)

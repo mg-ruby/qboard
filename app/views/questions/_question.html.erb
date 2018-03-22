@@ -3,6 +3,7 @@
   <p><%= markdown(question.body) %></p>
   <div class="callout">
      <ul class="menu simple">
+        <li><a href="#">Author: <%= question.user.name %></a></li>
         <li><a href="#">Answers: <%= question.answers.count %></a></li>
      </ul>
   </div>

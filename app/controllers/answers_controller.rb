@@ -2,6 +2,8 @@ class AnswersController < ApplicationController
 
   before_action :get_question
 
+  before_action :authorize, except: [:show, :index]
+
   def index
     @answers = repo.for_question(@question.id)
   end

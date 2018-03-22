@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
   def user_repo
     UserRepository.new(ROM.env)
   end
+
+  def authorize
+    redirect_to '/', notice: "You need to sign in" unless current_user
+  end
 end

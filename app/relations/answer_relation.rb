@@ -6,10 +6,4 @@ class AnswerRelation < ROM::Relation[:sql]
       belongs_to :user
     end
   end
-
-  # define your methods here ie:
-  #
-  # def all
-  #   select(:id, :name).order(:id)
-  # end
 end

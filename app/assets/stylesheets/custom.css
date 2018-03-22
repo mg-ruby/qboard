@@ -12,3 +12,8 @@
   font-size: 1.4em;
   margin-bottom: 5px;
 }
+
+.icon_menu a {
+  display: inline !important;
+  color: #000;
+}

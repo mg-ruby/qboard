@@ -20,12 +20,8 @@ class QuestionRepository < ROM::Repository::Root
       SearchResults::SearchCache.add(user, search_query)
       questions.where { body.ilike("%#{search_query}%") }.order { created_at.desc }
     else
-      sorted
+      sorted.combine(:user)
     end
-  end
-
-  def by_id_with_tickets(id)
-    questions.by_pk(id).combine(:tickets).one!
   end
 
   def by_id_with_answers_and_users(id)

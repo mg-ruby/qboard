@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+
+  before_action :authorize, except: [:show, :index]
+
   def index
     @questions = repo.query(params[:q], current_user)
   end

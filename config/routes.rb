@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resource :home, only: [:show]
   root to: "questions#index"
   resources :questions do
-    resources :answers
+    resources :answers, except: [:show]
   end
 end
