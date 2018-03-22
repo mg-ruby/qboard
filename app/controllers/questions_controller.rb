@@ -2,8 +2,11 @@ class QuestionsController < ApplicationController
 
   before_action :authorize, except: [:show, :index]
 
+  before_action :load_searches, only: [:show, :new, :create]
+
   def index
     @questions = repo.query(params[:q], current_user)
+    load_searches
   end
 
   def show

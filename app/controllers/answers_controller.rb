@@ -4,6 +4,8 @@ class AnswersController < ApplicationController
 
   before_action :authorize, except: [:show, :index]
 
+  before_action :load_searches, only: [:new, :create]
+
   def index
     @answers = repo.for_question(@question.id)
   end
@@ -36,7 +38,7 @@ class AnswersController < ApplicationController
   end
 
   def answer_params
-    params.require(:answer).permit(:title, :body).to_h.symbolize_keys
+    params.require(:answer).permit(:body).to_h.symbolize_keys
   end
 
   def question_repo

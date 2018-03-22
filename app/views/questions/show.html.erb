@@ -7,9 +7,18 @@
     <a href="<%= new_question_answer_path(@question) %>" class="button secondary">Add answer</a>
   <% end %>
   <p><%= markdown(@question.body) %></p>
-  <div class="callout">
-     <ul class="menu simple">
-        <li><a href="#">Answers: <%= @question.answers.count %></a></li>
-     </ul>
-  </div>
 </div>
+
+<% if @question.answers.any? %>
+  <div class="column row">
+    <ul class="tabs" data-tabs="5uxhud-tabs" id="example-tabs">
+        <li class="tabs-title is-active" role="presentation">
+        <a href="#" aria-selected="true" role="tab">Answers</a></li>
+    </ul>
+    <div class="tabs-content" data-tabs-content="example-tabs">
+        <div class="tabs-panel is-active" id="panel1">
+          <%= render @question.answers %>
+        </div>
+    </div>
+  </div>
+<% end %>

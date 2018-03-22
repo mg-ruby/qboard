@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resource :home, only: [:show]
   root to: "questions#index"
-  resources :questions do
-    resources :answers, except: [:show]
+  resources :questions, except: [:destroy] do
+    resources :answers, except: [:index, :show]
   end
 end

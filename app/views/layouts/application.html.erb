@@ -25,16 +25,7 @@
         <%= display_flash_messages %>
         <%= yield %>
       </div>
-      <div class="medium-3 columns">
-        <h4>Last searches</h4>
-        <ul class='menu vertical'>
-          <% if @searches %>
-            <% @searches.each do |result| %>
-              <li><span class="secondary label full_width"><a href="<%= questions_path(q: result) %>"><%= result %></a></span></li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
+      <%= render 'shared/searches', searches: @searches %>
     </div>
   </body>
 </html>

@@ -1,5 +1,4 @@
 class Answer < ApplicationModel
-  attribute :title, Types::Strict::String
   attribute :body, Types::Strict::String
   attribute :question_id, Types::Strict::Int
   attribute :user_id, Types::Strict::Int

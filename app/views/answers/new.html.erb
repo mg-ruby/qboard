@@ -3,7 +3,6 @@
 <%= simple_form_for [@question, @answer], html: { novalidate: 'novalidate' } do |f| %>
   <%= render "shared/error_messages", errors: @errors %>
 
-  <%= f.input :title %>
-  <%= f.input :body, input_html: { class: 'textarea' } %>
+  <%= f.input :body, label: false, input_html: { class: 'textarea' } %>
   <%= f.button :submit %>
 <% end %>

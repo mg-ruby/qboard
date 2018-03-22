@@ -2,7 +2,6 @@ ROM::SQL.migration do
   change do
     create_table :answers do
       primary_key :id
-      String :title
       String :body
       foreign_key :question_id, :questions, on_delete: :cascade
       foreign_key :user_id, :users

@@ -7,6 +7,5 @@ class AnswerMapper < ROM::Mapper
 
   attribute :question_id
   attribute :user_id
-  attribute :title
   attribute :body
 end

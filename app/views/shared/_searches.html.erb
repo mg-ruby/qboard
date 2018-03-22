@@ -1,0 +1,8 @@
+<div class="medium-3 columns">
+  <h4>Last searches</h4>
+  <ul class='menu vertical'>
+    <% searches.each do |result| %>
+      <li><span class="secondary label full_width"><a href="<%= questions_path(q: result) %>"><%= result %></a></span></li>
+    <% end %>
+  </ul>
+</div>

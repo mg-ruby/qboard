@@ -4,11 +4,11 @@ class QuestionRepository < ROM::Repository::Root
   commands :create, update: :by_pk, delete: :by_pk, mapper: :question
 
   def all
-    questions.all
+    questions
   end
 
   def sorted
-    all.combine(:user).order { created_at.desc }
+    all.combine(:user).combine(:answers).order { created_at.desc }
   end
 
   def by_id(id)
@@ -18,7 +18,7 @@ class QuestionRepository < ROM::Repository::Root
   def query(search_query, user = nil)
     if search_query.present?
       SearchResults::SearchCache.add(user, search_query)
-      sorted.where { body.ilike("%#{search_query}%") }
+      sorted.where { title.ilike("%#{search_query}%") | body.ilike("%#{search_query}%") }
     else
       sorted
     end
