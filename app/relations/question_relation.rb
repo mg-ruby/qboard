@@ -9,6 +9,6 @@ class QuestionRelation < ROM::Relation[:sql]
   end
 
   def all
-    select(:id, :title, :user, :user_id, :body, :created_at, :updated_at).order(:id)
+    select(:id, :title, :body, :user_id, :created_at, :updated_at).order(:id)
   end
 end

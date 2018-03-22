@@ -7,7 +7,6 @@
     <title><%= content_for?(:title) ? yield(:title) : "QA" %></title>
 
     <%= stylesheet_link_tag    "application", "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "vendor/modernizr", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
     <%= csrf_meta_tags %>
   </head>
