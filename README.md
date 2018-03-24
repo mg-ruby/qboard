@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/maratgaliev/qboard.svg?branch=master)](https://travis-ci.org/maratgaliev/qboard)
+
 # QBoard
 
 Example of usage rom-rb and dry-rb with Rails.
