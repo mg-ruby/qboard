@@ -7,9 +7,8 @@ services:
   - redis-server
 rvm:
   - 2.4.0
-before_install: gem install bundler -v 1.16.0
-script:
-  - bundle exec rspec
+before_script:
+  - psql -c 'create database qboard_test' -U postgres
 script:
   - bundle exec rails db:migrate RAILS_ENV=test
   - bundle exec rspec  

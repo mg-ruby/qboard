@@ -3,6 +3,10 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+test:
+  <<: *default
+  database: qboard_test
+
 development:
   <<: *default
   database: qboard_development
