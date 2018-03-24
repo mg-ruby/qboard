@@ -17,6 +17,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -34,6 +35,7 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'rubocop', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rom-rails'
@@ -47,7 +49,6 @@ gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'simplemde-rails'
-gem 'rubocop', require: false
 gem 'rdoc'
 gem 'redis'
 gem 'redcarpet'

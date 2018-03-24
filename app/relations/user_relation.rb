@@ -7,12 +7,4 @@ class UserRelation < ROM::Relation[:sql]
       has_many :answers
     end
   end
-
-  def user_questions
-    assoc(:questions)
-  end
-  
-  def user_answers
-    assoc(:answers)
-  end
 end

@@ -4,6 +4,7 @@ class AnswerRelation < ROM::Relation[:sql]
   schema(:answers, infer: true) do
     associations do
       belongs_to :user
+      belongs_to :question
     end
   end
 end
