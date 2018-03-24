@@ -4,5 +4,5 @@
   <%= render "shared/error_messages", errors: @errors %>
 
   <%= f.input :body, label: false, input_html: { class: 'textarea' } %>
-  <%= f.button :submit %>
+  <%= f.submit 'Save', class: 'button'%>
 <% end %>
