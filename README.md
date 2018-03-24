@@ -24,7 +24,7 @@ $ rails s
 Open http://localhost:3000 in your browser
 
 
-## Run spec
+## Run specs
 
 Run **rspec** as usual:
 
