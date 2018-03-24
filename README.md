@@ -21,9 +21,16 @@ Run server:
 $ rails s
 ```
 
-## Usage
-
 Open http://localhost:3000 in your browser
+
+
+## Run spec
+
+Run **rspec** as usual:
+
+```ruby
+$ rspec
+```
 
 ## App deployed to Heroku
 
